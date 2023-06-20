@@ -33,7 +33,7 @@ def signup(request):
                 },
             )
             user.email_user("Verify registration", message)
-            return redirect("home")
+            return redirect("index")
     else:
         form = SignUpForm()
     return render(request, "signup.html", {"form": form})
@@ -49,7 +49,7 @@ def activate(request, id, token):
         user.is_active = True
         user.save()
         login(request, user)
-        return redirect("home")
+        return redirect("index")
     else:
         return render(request, "account_activation_invalid.html")
 
