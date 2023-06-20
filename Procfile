@@ -1,1 +1,1 @@
-web: gunicorn registration.wsgi
+web: gunicorn myloginsite.wsgi
