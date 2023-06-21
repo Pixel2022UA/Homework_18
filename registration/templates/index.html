@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
+    <title>Index</title>
 </head>
 <body>
 {% if user.is_authenticated %}
@@ -11,7 +11,7 @@
         <button type="submit">Logout</button>
     </form>
     {% else %}
-    You are not registered, please <a href="{% url 'login' %}">Login</a> or <a href="{% url 'registration' %}">Sign Up</a>
+    You are not registered, please <a href="{% url 'login' %}">LogIn</a> or <a href="{% url 'registration' %}">SignUp</a>
 {% endif %}
 </body>
 </html>

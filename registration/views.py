@@ -67,7 +67,6 @@ def login_view(request):
     return render(request, "login.html")
 
 
-# @login_required
 def logout_view(request):
     logout(request)
     return redirect("index")
