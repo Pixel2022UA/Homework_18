@@ -1,4 +1,3 @@
-from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
@@ -64,8 +63,8 @@ def login_view(request):
             login(request, user)
             return redirect("index")
         else:
-            messages.error(request, "Такой пользователь не активирован или не существует")
-    return render(request, "login.html", messages)
+            return HttpResponse("Такой пользователь не активирован или не существует")
+    return render(request, "login.html")
 
 
 @login_required
