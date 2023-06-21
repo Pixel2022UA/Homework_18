@@ -63,11 +63,11 @@ def login_view(request):
             login(request, user)
             return redirect("index")
         else:
-            return HttpResponse("Такой пользователь не активирован или не существует")
+            return HttpResponse("This user is not activated or does not exist")
     return render(request, "login.html")
 
 
-@login_required
+# @login_required
 def logout_view(request):
     logout(request)
     return redirect("index")

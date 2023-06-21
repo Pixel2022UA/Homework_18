@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
 {% if user.is_authenticated %}
     <p>You are logged in as {{ user.username }}</p>
     <form action="{% url 'logout' %}" method="post">
@@ -7,3 +13,5 @@
     {% else %}
     You are not registered, please <a href="{% url 'login' %}">Login</a> or <a href="{% url 'registration' %}">Sign Up</a>
 {% endif %}
+</body>
+</html>
