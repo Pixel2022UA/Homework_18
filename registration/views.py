@@ -1,15 +1,9 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.sites.shortcuts import get_current_site
-from django.core.mail import send_mail
 from django.http import HttpResponse
-from django.shortcuts import render
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.template.loader import render_to_string
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 from .forms import SignUpForm
 from .tokens import account_activation_token
@@ -34,8 +28,7 @@ def signup(request):
             )
             user.email_user("Verify registration", message)
             return HttpResponse(
-                f"We have sent you an email to {user.email_user}, follow the link in the email to activate your account.",
-                status=302,
+                f"We have sent you an email, follow the link in the email to verify your account."
             )
     else:
         form = SignUpForm()
