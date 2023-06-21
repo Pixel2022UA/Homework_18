@@ -34,7 +34,8 @@ def signup(request):
             )
             user.email_user("Verify registration", message)
             return HttpResponse(
-                f"We have sent you an email to {user.email_user}, follow the link in the email to activate your account."
+                f"We have sent you an email to {user.email_user}, follow the link in the email to activate your account.",
+                status=302,
             )
     else:
         form = SignUpForm()
