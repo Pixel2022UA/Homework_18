@@ -33,7 +33,7 @@ def signup(request):
                 },
             )
             user.email_user("Verify registration", message)
-            HttpResponse(
+            return HttpResponse(
                 f"We have sent you an email to {user.email_user}, follow the link in the email to activate your account."
             )
     else:
