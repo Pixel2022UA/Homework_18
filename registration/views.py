@@ -65,7 +65,7 @@ def login_view(request):
             return redirect("index")
         else:
             messages.error(request, "Такой пользователь не активирован или не существует")
-    return render(request, "login.html")
+    return render(request, "login.html", messages)
 
 
 @login_required
