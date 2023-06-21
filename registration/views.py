@@ -33,7 +33,9 @@ def signup(request):
                 },
             )
             user.email_user("Verify registration", message)
-            return redirect("index.html")
+            HttpResponse(
+                f"We have sent you an email to {user.email_user}, follow the link in the email to activate your account."
+            )
     else:
         form = SignUpForm()
     return render(request, "signup.html", {"form": form})

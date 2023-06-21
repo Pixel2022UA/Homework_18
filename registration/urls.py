@@ -11,5 +11,5 @@ urlpatterns = [
         name="activate",
     ),
     path("logout/", views.logout_view, name="logout"),
-    path("login/", views.login_view, name="login")
+    path("login/", views.login_view, name="login"),
 ]
