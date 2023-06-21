@@ -33,7 +33,7 @@ def signup(request):
                 },
             )
             user.email_user("Verify registration", message)
-            return redirect("index")
+            return redirect("login.html")
     else:
         form = SignUpForm()
     return render(request, "signup.html", {"form": form})
@@ -61,7 +61,7 @@ def login_view(request):
         user = authenticate(username=username, password=password)
         if user is not None and user.is_active:
             login(request, user)
-            return redirect("home")
+            return redirect("index")
         else:
             return HttpResponse("Не зарегистрирован")
     return render(request, "login.html")
